@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog - Sửa bài viết</title>
+  <link rel="stylesheet" href="/css/edit.css">
+</head>
+<body>
+  <h1>Sửa bài viết</h1>
+  <form action="/blog/edit/{{post.id}}" method="POST">
+    <label for="title">Tiêu đề:</label>
+    <input type="text" name="title" value="{{post.title}}" required><br>
+    <label for="content">Nội dung:</label>
+    <textarea name="content" required>{{post.content}}</textarea><br>
+    <button type="submit">Lưu chỉnh sửa</button>
+  </form>
+  <a href="/blog/index">Quay lại danh sách bài viết</a>
+  {{> footer}}
+</body>
+</html>

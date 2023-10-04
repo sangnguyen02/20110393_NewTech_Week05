@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog - {{post.title}}</title>
+  <link rel="stylesheet" href="/css/post.css">
+</head>
+<body>
+  <h1>{{post.title}}</h1>
+  <p>{{post.content}}</p>
+  
+  <h2>Comments</h2>
+  <ul>
+    {{#each post.comments}}
+      <li>{{@indexPlus1}}Comment: {{this}}</li>
+    {{/each}}
+  </ul>
+  
+  <form action="/blog/comment/{{post.id}}" method="POST">
+    <label for="comment">Thêm bình luận:</label>
+    <input type="text" name="comment" required>
+    <button type="submit">Bình luận</button>
+  </form>
+  
+  <a href="/blog/index">Quay lại danh sách bài viết</a>
+  {{> footer}}
+</body>
+</html>
